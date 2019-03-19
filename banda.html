@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+
+    body {
+      background: #eee;
+      font-size: 150%;
+      font-weight: bolder;
+      font-family: Helvetica Arial sans-serif;
+    }
+
+    a[data-tool-tip] {
+      position: relative;
+    }
+
+    a[data-tool-tip]::after {
+      content: attr(data-tool-tip);
+      display: block;
+      position: absolute;
+      background-color: #ccc;
+      padding: 1em 3em;
+      color: #fff;
+      border-radius: 3px;
+      font-size: 0.75em;
+      bottom: 75px;
+      left: 0;
+      white-space: nowrap;
+      transform: scale(0);
+      transition:
+        transform ease-out 200ms;
+        bottom ease-out 200ms;
+    }
+
+    a[data-tool-tip]:hover::after {
+      transform: scale(1);
+    }
+
+    h1, a {
+      color: #FFA500;
+    }
+
+    a:visited {
+      color: #abd;
+    }
+
+
+    </style>
+  </head>
+  <body>
+    <h1>This is a page.</h1>
+    <h2>Mildly interesting content.</h2>
+    <br><br>
+    <a href="https://lipsum.com/" data-tool-tip="This goes to a website!"><p>This is normally where some Greeking would go!</p></a>
+  </body>
+</html>
